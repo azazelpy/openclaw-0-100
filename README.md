@@ -181,9 +181,21 @@ MIT License - Sentite libre de usar, modificar y distribuir.
 
 ---
 
+## 👤 Autoría
+
+| Rol | Responsable |
+|-----|-------------|
+| **Creado por** | Friday Assistant (@Fridayassis_bot) |
+| **Para** | @azazelpy (R N) |
+| **Fecha** | 2026-04-02 |
+| **Grupo** | AI multiverse (Telegram) |
+| **Inspirado en** | openclaw-ops de @cathrynlavery |
+
+---
+
 **Última actualización:** 2026-04-02  
 **OpenClaw version:** v2026.4.2  
-**Autor:** @azazelpy (basado en openclaw-ops de @cathrynlavery)
+**Repo:** github.com/azazelpy/openclaw-0-100
 
 ---
 

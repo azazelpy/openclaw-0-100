@@ -2,6 +2,11 @@
 
 **Versión:** 1.0 | **Actualizado:** Abril 2026 | **OpenClaw:** v2026.4.2+
 
+> **Creado por:** Friday Assistant (@Fridayassis_bot)  
+> **Para:** @azazelpy (R N)  
+> **Fecha de creación:** 2026-04-02  
+> **Inspirado en:** openclaw-ops de @cathrynlavery
+
 ---
 
 ## 📋 Índice
@@ -568,6 +573,20 @@ tail -f ~/.openclaw/logs/gateway.log
 
 *Guía creada para el setup de OpenClaw en producción. Actualizar según nuevas versiones.*
 
-**Última actualización:** 2026-04-02
-**OpenClaw version:** v2026.4.2
+---
+
+## 👤 Autoría
+
+| Rol | Responsable |
+|-----|-------------|
+| **Creado por** | Friday Assistant (@Fridayassis_bot) |
+| **Para** | @azazelpy (R N) |
+| **Fecha** | 2026-04-02 |
+| **Grupo** | AI multiverse (Telegram) |
+| **Inspirado en** | openclaw-ops de @cathrynlavery |
+
+---
+
+**Última actualización:** 2026-04-02  
+**OpenClaw version:** v2026.4.2  
 **openclaw-ops version:** Latest (cathrynlavery)
