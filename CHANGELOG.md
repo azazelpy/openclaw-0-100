@@ -5,13 +5,22 @@ Todos los cambios notables a este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-04-02
+
+### Agregado
+- 🇬🇧 English version: `docs/OPENCLAW-0-TO-100-EN.md`
+- 🇬🇧 English README: `README-EN.md`
+
 ## [1.0.0] - 2026-04-02
 
 ### Agregado
 - 📚 Guía completa "OpenClaw 0 → 100%" en 3 formatos (MD, PDF, HTML)
+- 📚 Complete guide "OpenClaw 0 → 100%" in 3 formats (MD, PDF, HTML)
 - 🚀 Script `quick-start.sh` para instalación interactiva
+- 🚀 Interactive installation script `quick-start.sh`
 - 📋 Checklist de implementación (10 fases, 40 items)
 - 🔐 Security scan y hardening checklist
+- 🔐 Security scan and hardening checklist
 - 📡 Integración con openclaw-ops (watchdog, heal, health-check)
 - 👤 Sección de autoría y créditos
 
