@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>OpenClaw 0 a 100% - Guía Completa</title>
+<style>
+  @page { margin: 2cm; size: A4; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+  .cover { text-align: center; padding: 60px 20px; page-break-after: always; }
+  .cover h1 { font-size: 36px; color: #2c3e50; margin-bottom: 10px; }
+  .cover .emoji { font-size: 80px; margin-bottom: 20px; }
+  .cover .subtitle { font-size: 18px; color: #7f8c8d; margin-bottom: 40px; }
+  .cover .meta { font-size: 12px; color: #95a5a6; }
+  h1 { font-size: 24px; color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; margin-top: 30px; }
+  h2 { font-size: 18px; color: #34495e; border-bottom: 1px solid #bdc3c7; padding-bottom: 5px; margin-top: 25px; }
+  h3 { font-size: 14px; color: #7f8c8d; margin-top: 20px; }
+  .section { margin-bottom: 30px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 10px; }
+  th { background: #3498db; color: white; padding: 8px; text-align: left; }
+  td { padding: 8px; border-bottom: 1px solid #ecf0f1; }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: 'Consolas', 'Monaco', monospace; font-size: 10px; }
+  pre { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto; font-size: 10px; }
+  pre code { background: none; padding: 0; color: inherit; }
+  .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 15px 0; }
+  .info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 10px 15px; margin: 15px 0; }
+  .success { background: #d4edda; border-left: 4px solid #28a745; padding: 10px 15px; margin: 15px 0; }
+  .danger { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px 15px; margin: 15px 0; }
+  ul, ol { margin: 10px 0; padding-left: 25px; }
+  li { margin: 5px 0; }
+  .checkbox { display: inline-block; width: 15px; height: 15px; border: 1px solid #333; margin-right: 8px; }
+  .toc { background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0; }
+  .toc h2 { margin-top: 0; }
+  .toc ul { list-style: none; padding: 0; }
+  .toc li { margin: 8px 0; }
+  .toc a { color: #3498db; text-decoration: none; }
+  .header-badge { display: inline-block; background: #3498db; color: white; padding: 3px 8px; border-radius: 3px; font-size: 10px; margin-left: 10px; }
+  .footer { text-align: center; font-size: 9px; color: #95a5a6; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ecf0f1; }
+  .page-break { page-break-after: always; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="emoji">🦞</div>
+  <h1>OpenClaw</h1>
+  <div class="subtitle">Guía Completa 0 → 100%</div>
+  <div style="margin: 40px 0;">
+    <div>Instalación • Configuración • Operaciones • Seguridad</div>
+  </div>
+  <div class="meta">
+    <div>Versión 1.0 | Abril 2026</div>
+    <div>OpenClaw v2026.4.2+</div>
+    <div>Incluye openclaw-ops por Cathryn Lavery</div>
+    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ecf0f1;">
+      <div><strong>Creado por:</strong> Friday Assistant (@Fridayassis_bot)</div>
+      <div><strong>Para:</strong> @azazelpy (R N)</div>
+      <div><strong>Fecha:</strong> 2026-04-02</div>
+      <div><strong>Grupo:</strong> AI multiverse (Telegram)</div>
+    </div>
+  </div>
+</div>
+
+<div class="toc">
+  <h2>📋 Índice</h2>
+  <ul>
+    <li><a href="#section1">1. Instalación Inicial</a></li>
+    <li><a href="#section2">2. Configuración Básica</a></li>
+    <li><a href="#section3">3. Modelos y APIs</a></li>
+    <li><a href="#section4">4. Canales de Comunicación</a></li>
+    <li><a href="#section5">5. Skills Esenciales</a></li>
+    <li><a href="#section6">6. Operaciones y Monitoreo</a></li>
+    <li><a href="#section7">7. Seguridad y Hardening</a></li>
+    <li><a href="#section8">8. Mantenimiento</a></li>
+    <li><a href="#section9">9. Troubleshooting</a></li>
+    <li><a href="#section10">10. Checklist Final</a></li>
+  </ul>
+</div>
+
+<div class="section" id="section1">
+  <h1>1. Instalación Inicial</h1>
+  
+  <h2>Requisitos Previos</h2>
+  <table>
+    <tr><th>Herramienta</th><th>Versión</th><th>Comando</th></tr>
+    <tr><td>Node.js</td><td>22.16+ o 24</td><td><code>node --version</code></td></tr>
+    <tr><td>npm/pnpm/bun</td><td>Latest</td><td><code>npm --version</code></td></tr>
+    <tr><td>Git</td><td>Latest</td><td><code>git --version</code></td></tr>
+    <tr><td>Python 3</td><td>3.9+</td><td><code>python3 --version</code></td></tr>
+  </table>
+
+  <h2>Instalación</h2>
+  <pre><code># Instalar OpenClaw globalmente
+npm install -g openclaw@latest
+
+# O con pnpm (recomendado)
+pnpm add -g openclaw@latest
+
+# Verificar instalación
+openclaw --version</code></pre>
+
+  <h2>Onboarding</h2>
+  <pre><code># Asistente interactivo de configuración
+openclaw onboard --install-daemon</code></pre>
+  
+  <div class="info">
+    <strong>Esto configura:</strong> Gateway daemon, Workspace inicial, Variables de entorno, Daemon de inicio automático
+  </div>
+
+  <h2>Verificación Inicial</h2>
+  <pre><code>openclaw gateway status
+openclaw status
+tail -f ~/.openclaw/logs/gateway.log</code></pre>
+</div>
+
+<div class="section" id="section2">
+  <h1>2. Configuración Básica</h1>
+  
+  <h2>Estructura de Directorios</h2>
+  <pre><code>~/.openclaw/
+├── openclaw.json          # Configuración principal
+├── workspace/             # Tu espacio de trabajo
+│   ├── SOUL.md           # Personalidad del agente
+│   ├── AGENTS.md         # Convenciones del workspace
+│   ├── MEMORY.md         # Memoria a largo plazo
+│   ├── memory/           # Notas diarias
+│   ├── tasks/            # Gestión de tareas
+│   └── skills/           # Skills personalizados
+├── skills/                # Skills instalados
+└── logs/                  # Logs del sistema</code></pre>
+
+  <h2>Configuración Mínima (openclaw.json)</h2>
+  <pre><code>{
+  "agent": {
+    "model": "modelstudio/qwen3.5-plus"
+  },
+  "providers": {
+    "nvidia": {
+      "apiKey": "nvapi-xxxxx",
+      "baseUrl": "https://integrate.api.nvidia.com/v1"
+    },
+    "modelstudio": {
+      "apiKey": "sk-xxxxx",
+      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    }
+  },
+  "env": {
+    "EXA_API_KEY": "xxxxx"
+  },
+  "security": {
+    "actionApproval": {
+      "required": ["email.send", "file.delete", "shell.exec"]
+    }
+  }
+}</code></pre>
+
+  <h2>Variables de Entorno</h2>
+  <pre><code># ~/.zshenv o ~/.bashrc
+export NVIDIA_API_KEY="nvapi-xxxxx"
+export DASHSCOPE_API_KEY="sk-xxxxx"
+export MINIMAX_API_KEY="xxxxx"
+export EXA_API_KEY="xxxxx"</code></pre>
+</div>
+
+<div class="section" id="section3">
+  <h1>3. Modelos y APIs</h1>
+  
+  <h2>Proveedores Recomendados</h2>
+  <table>
+    <tr><th>Proveedor</th><th>Modelo</th><th>Contexto</th><th>Costo</th><th>Uso</th></tr>
+    <tr><td><strong>NVIDIA NIM</strong></td><td>minimax-m2.5</td><td>32K</td><td>FREE</td><td>Diario</td></tr>
+    <tr><td><strong>Alibaba</strong></td><td>qwen3.5-plus</td><td>256K</td><td>~$0.10/1M</td><td>Producción</td></tr>
+    <tr><td><strong>Alibaba</strong></td><td>qwen-plus</td><td>128K-1M</td><td>~$0.40/1M</td><td>Docs largos</td></tr>
+    <tr><td><strong>Alibaba</strong></td><td>qwen-turbo</td><td>128K</td><td>~$0.05/1M</td><td>Rápido</td></tr>
+    <tr><td><strong>Local</strong></td><td>qwen3.5:9b</td><td>32K</td><td>FREE</td><td>Offline</td></tr>
+  </table>
+
+  <div class="success">
+    <strong>Costo Mensual Estimado (100K tokens/día):</strong> NVIDIA NIM $0.00 + Alibaba ~$0.50 = <strong>~$0.50/mes</strong>
+  </div>
+
+  <h2>Fallback Chain</h2>
+  <pre><code>MODELS = [
+    "minimaxai/minimax-m2.5",            # PRIMARY
+    "nvidia/nemotron-4-340b-instruct",   # Fallback 1
+    "deepseek-ai/deepseek-r1-distill-qwen-32b",  # Fallback 2
+    "meta/llama-3.1-70b-instruct",       # Fallback 3
+]</code></pre>
+</div>
+
+<div class="section" id="section4">
+  <h1>4. Canales de Comunicación</h1>
+  
+  <h2>Canales Soportados</h2>
+  <p>✅ Telegram • ✅ Discord • ✅ WhatsApp • ✅ Slack • ✅ Signal • ✅ iMessage (macOS) • ✅ Google Chat • ✅ IRC • ✅ Matrix • ✅ LINE</p>
+
+  <h2>Problemas Comunes</h2>
+  <table>
+    <tr><th>Canal</th><th>Problema</th><th>Solución</th></tr>
+    <tr><td>Slack</td><td><code>missing_scope</code></td><td>Renovar token con scopes correctos</td></tr>
+    <tr><td>WhatsApp</td><td>Desconexión</td><td>Usar Bun en lugar de Node</td></tr>
+    <tr><td>Telegram</td><td>No responde</td><td>Verificar bot token</td></tr>
+    <tr><td>iMessage</td><td>Sin acceso</td><td>Activar Full Disk Access</td></tr>
+    <tr><td>Discord</td><td>WebSocket 1005/1006</td><td>Reiniciar gateway</td></tr>
+  </table>
+</div>
+
+<div class="section" id="section5">
+  <h1>5. Skills Esenciales</h1>
+  
+  <h2>Skills Recomendados</h2>
+  <table>
+    <tr><th>Skill</th><th>Propósito</th><th>Prioridad</th></tr>
+    <tr><td><code>openclaw-ops</code></td><td>Monitoreo y salud</td><td><strong>Crítica</strong></td></tr>
+    <tr><td><code>skill-vetter</code></td><td>Auditoría de skills</td><td><strong>Crítica</strong></td></tr>
+    <tr><td><code>weather</code></td><td>Clima y pronósticos</td><td>Alta</td></tr>
+    <tr><td><code>github</code></td><td>Gestión de issues/PRs</td><td>Alta</td></tr>
+    <tr><td><code>summarize</code></td><td>Resumir URLs/transcripts</td><td>Alta</td></tr>
+    <tr><td><code>healthcheck</code></td><td>Hardening de seguridad</td><td>Alta</td></tr>
+  </table>
+
+  <div class="warning">
+    <strong>⚠️ IMPORTANTE:</strong> Antes de instalar cualquier skill de terceros, ejecutá:
+    <code>bash scripts/skill-audit.sh &lt;ruta-del-skill&gt;</code>
+  </div>
+
+  <h2>Instalación</h2>
+  <pre><code># Skills oficiales
+openclaw skills install weather
+openclaw skills install github
+
+# openclaw-ops (crítico)
+git clone https://github.com/cathrynlavery/openclaw-ops.git ~/.openclaw/skills/openclaw-ops</code></pre>
+</div>
+
+<div class="section" id="section6">
+  <h1>6. Operaciones y Monitoreo</h1>
+  
+  <h2>openclaw-ops: Scripts Esenciales</h2>
+  <table>
+    <tr><th>Script</th><th>Propósito</th><th>Frecuencia</th></tr>
+    <tr><td><code>heal.sh</code></td><td>Auto-reparación</td><td>On-demand</td></tr>
+    <tr><td><code>watchdog.sh</code></td><td>Monitoreo continuo</td><td>Cada 5 min</td></tr>
+    <tr><td><code>check-update.sh</code></td><td>Triage post-update</td><td>Post-update</td></tr>
+    <tr><td><code>security-scan.sh</code></td><td>Auditoría seguridad</td><td>Semanal</td></tr>
+    <tr><td><code>health-check.sh</code></td><td>Health checks</td><td>Cada hora</td></tr>
+  </table>
+
+  <h2>Instalación del Watchdog (macOS)</h2>
+  <pre><code>cd ~/.openclaw/skills/openclaw-ops
+bash scripts/watchdog-install.sh
+
+# Ver logs
+tail -f ~/.openclaw/logs/watchdog.log</code></pre>
+
+  <h2>Watchdog en Linux (cron)</h2>
+  <pre><code># Editar crontab
+crontab -e
+
+# Agregar cada 5 minutos
+*/5 * * * * bash /path/to/scripts/watchdog.sh >> ~/.openclaw/logs/watchdog.log 2>&1</code></pre>
+</div>
+
+<div class="section" id="section7">
+  <h1>7. Seguridad y Hardening</h1>
+  
+  <h2>Security Scan</h2>
+  <pre><code>cd ~/.openclaw/skills/openclaw-ops
+bash scripts/security-scan.sh</code></pre>
+
+  <div class="info">
+    Genera reporte con: Score de hardening (0-100), Credenciales expuestas, Permisos de archivos, Configuración insegura
+  </div>
+
+  <h2>Hardening Checklist</h2>
+  <ul>
+    <li>☐ <code>auth: "none"</code> eliminado (v2026.1.29+)</li>
+    <li>☐ API keys en variables de entorno, NO en config</li>
+    <li>☐ <code>tools.exec.ask</code> y <code>tools.exec.security</code> configurados</li>
+    <li>☐ Skills de terceros auditados antes de instalar</li>
+    <li>☐ Permisos de archivos correctos (600 para secrets)</li>
+    <li>☐ No secrets en logs o history</li>
+    <li>☐ Firewall configurado para gateway</li>
+  </ul>
+
+  <h2>CVE Críticos (v2026.2.12+)</h2>
+  <table>
+    <tr><th>CVE</th><th>Descripción</th><th>Impacto</th></tr>
+    <tr><td>CVE-2026-25253</td><td>RCE via token leakage</td><td><strong>Crítico</strong></td></tr>
+    <tr><td>SSRF-2026-001</td><td>SSRF en MCP tools</td><td>Alto</td></tr>
+    <tr><td>PATH-2026-002</td><td>Path traversal</td><td>Alto</td></tr>
+    <tr><td>PROMPT-2026-003</td><td>Prompt injection</td><td>Medio</td></tr>
+  </table>
+
+  <div class="danger">
+    <strong>⚠️ Versión mínima requerida: v2026.2.12</strong>
+  </div>
+</div>
+
+<div class="section" id="section8">
+  <h1>8. Mantenimiento</h1>
+  
+  <h2>Diario (Automático via Heartbeat)</h2>
+  <ul>
+    <li>☐ Check de emails urgentes</li>
+    <li>☐ Check de calendario (próximas 24-48h)</li>
+    <li>☐ Check de notificaciones</li>
+    <li>☐ Rotación de logs si &gt;100MB</li>
+  </ul>
+
+  <h2>Semanal</h2>
+  <pre><code># Security scan
+bash scripts/security-scan.sh
+
+# Limpieza de sesiones
+openclaw sessions prune --older-than 7d</code></pre>
+
+  <h2>Mensual</h2>
+  <ul>
+    <li>☐ Revisar MEMORY.md y curar insights</li>
+    <li>☐ Actualizar openclaw: <code>openclaw update</code></li>
+    <li>☐ Ejecutar <code>check-update.sh</code> post-actualización</li>
+    <li>☐ Revisar costos de APIs</li>
+    <li>☐ Backup de workspace y config</li>
+  </ul>
+</div>
+
+<div class="section" id="section9">
+  <h1>9. Troubleshooting</h1>
+  
+  <h2>Gateway Down</h2>
+  <pre><code># Ver estado
+openclaw gateway status
+
+# Ver logs de error
+tail -100 ~/.openclaw/logs/gateway.err.log
+
+# Intentar restart
+openclaw gateway restart
+
+# Si falla, ejecutar heal
+cd ~/.openclaw/skills/openclaw-ops
+bash scripts/heal.sh</code></pre>
+
+  <h2>Comandos de Diagnóstico</h2>
+  <pre><code>openclaw status                    # Estado completo
+openclaw --version                 # Versión
+openclaw doctor                    # Diagnóstico automático
+openclaw sessions list             # Ver sesiones activas
+tail -f ~/.openclaw/logs/gateway.log  # Ver logs en vivo</code></pre>
+
+  <h2>Problemas Comunes Post-Update</h2>
+  <table>
+    <tr><th>Problema</th><th>Causa</th><th>Solución</th></tr>
+    <tr><td>Gateway no inicia</td><td><code>auth: "none"</code> removido</td><td>Configurar auth válido</td></tr>
+    <tr><td>Agentes bloqueados</td><td>Exec approvals reset</td><td>Re-configurar allowlists</td></tr>
+    <tr><td>Canales offline</td><td>Tokens expirados</td><td>Renovar tokens</td></tr>
+    <tr><td>Skills fallan</td><td>Breaking changes</td><td>Revisar changelog</td></tr>
+  </table>
+</div>
+
+<div class="section" id="section10">
+  <h1>10. Checklist Final</h1>
+  
+  <h2>Instalación ✅</h2>
+  <ul>
+    <li>☐ Node.js 22.16+ o 24 instalado</li>
+    <li>☐ OpenClaw instalado globalmente</li>
+    <li>☐ Gateway daemon corriendo</li>
+    <li>☐ Workspace inicializado</li>
+  </ul>
+
+  <h2>Configuración ✅</h2>
+  <ul>
+    <li>☐ openclaw.json configurado</li>
+    <li>☐ Variables de entorno en .zshenv/.bashrc</li>
+    <li>☐ Modelos configurados con fallback</li>
+    <li>☐ Al menos 1 canal conectado y testeado</li>
+  </ul>
+
+  <h2>Skills ✅</h2>
+  <ul>
+    <li>☐ openclaw-ops instalado</li>
+    <li>☐ skill-vetter instalado</li>
+    <li>☐ watchdog instalado (LaunchAgent o cron)</li>
+    <li>☐ Skills básicos instalados</li>
+  </ul>
+
+  <h2>Seguridad ✅</h2>
+  <ul>
+    <li>☐ Security scan ejecutado (score &gt;80)</li>
+    <li>☐ API keys en env vars, no en config</li>
+    <li>☐ Permisos de archivos correctos</li>
+    <li>☐ Skills de terceros auditados</li>
+  </ul>
+
+  <h2>Monitoreo ✅</h2>
+  <ul>
+    <li>☐ Watchdog corriendo</li>
+    <li>☐ Health targets configurados</li>
+    <li>☐ Logs siendo rotados</li>
+    <li>☐ Alertas configuradas</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p><strong>👤 Autoría</strong></p>
+  <p><strong>Creado por:</strong> Friday Assistant (@Fridayassis_bot) | <strong>Para:</strong> @azazelpy (R N)<br>
+  <strong>Fecha:</strong> 2026-04-02 | <strong>Grupo:</strong> AI multiverse (Telegram)</p>
+  <p style="margin-top: 15px;"><strong>📞 Soporte y Recursos</strong></p>
+  <p>Docs Oficiales: https://docs.openclaw.ai | GitHub: https://github.com/openclaw/openclaw<br>
+  Discord: https://discord.com/invite/clawd | openclaw-ops: https://github.com/cathrynlavery/openclaw-ops</p>
+  <p style="margin-top: 15px;">Última actualización: 2026-04-02 | OpenClaw version: v2026.4.2</p>
+</div>
+
+</body>
+</html>

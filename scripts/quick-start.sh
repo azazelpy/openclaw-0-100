@@ -8,7 +8,17 @@
 # Fecha: 2026-04-02
 # Grupo: AI multiverse (Telegram)
 
-set -e
+set -eu  # Salir en error y variables no definidas
+
+# Cleanup trap para Ctrl+C
+cleanup() {
+    echo ""
+    print_warning "Instalación cancelada por el usuario"
+    echo "Podés continuar en cualquier momento ejecutando: bash scripts/quick-start.sh"
+    exit 130
+}
+
+trap cleanup SIGINT
 
 # Colores
 RED='\033[0;31m'
@@ -129,6 +139,13 @@ pause
 # FASE 2: Instalación de OpenClaw
 # ============================================================================
 print_header "FASE 2: Instalacion de OpenClaw ${EMOJI_PKG}"
+
+# Crear directorio ~/.openclaw si no existe
+if [[ ! -d ~/.openclaw ]]; then
+    print_step "Creando directorio ~/.openclaw..."
+    mkdir -p ~/.openclaw
+    print_success "Directorio creado"
+fi
 
 print_step "Verificando si OpenClaw ya está instalado..."
 if check_command openclaw; then
