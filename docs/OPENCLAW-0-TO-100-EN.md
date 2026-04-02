@@ -2,7 +2,7 @@
 
 **Version:** 1.0 | **Updated:** April 2026 | **OpenClaw:** v2026.4.2+
 
-> **Created by:** Friday Assistant (@Fridayassis_bot)  
+> **Created by:** Friday Assistant  
 > **For:** @azazelpy (R N)  
 > **Creation Date:** 2026-04-02  
 > **Inspired by:** openclaw-ops by @cathrynlavery
@@ -579,10 +579,10 @@ tail -f ~/.openclaw/logs/gateway.log
 
 | Role | Responsible |
 |------|-------------|
-| **Created by** | Friday Assistant (@Fridayassis_bot) |
+| **Created by** | Friday Assistant |
 | **For** | @azazelpy (R N) |
 | **Date** | 2026-04-02 |
-| **Group** | AI multiverse (Telegram) |
+| **Group** | AI multiverse |
 | **Inspired by** | openclaw-ops by @cathrynlavery |
 
 ---

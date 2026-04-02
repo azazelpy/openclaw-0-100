@@ -1,7 +1,7 @@
 # 🔐 Security Audit Report - OpenClaw 0→100%
 
 **Audit Date:** 2026-04-02  
-**Auditor:** Friday Assistant (@Fridayassis_bot)  
+**Auditor:** Friday Assistant  
 **Project:** github.com/azazelpy/openclaw-0-100  
 **Version:** 1.0.0
 
@@ -165,7 +165,7 @@ All security checks passed. The project follows best practices for:
 **Audit completed:** 2026-04-02 19:45 GMT-3  
 **Audit updated:** 2026-04-02 20:00 GMT-3 (code fixes applied)  
 **Next audit recommended:** 2026-05-02 (monthly)  
-**Auditor signature:** @Fridayassis_bot 🦞
+**Auditor signature:** Friday Assistant 🦞
 
 ---
 

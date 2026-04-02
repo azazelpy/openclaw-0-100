@@ -206,10 +206,10 @@ MIT License - Feel free to use, modify, and distribute.
 
 | Role | Responsible |
 |------|-------------|
-| **Created by** | Friday Assistant (@Fridayassis_bot) |
+| **Created by** | Friday Assistant |
 | **For** | @azazelpy (R N) |
 | **Date** | 2026-04-02 |
-| **Group** | AI multiverse (Telegram) |
+| **Group** | AI multiverse |
 | **Inspired by** | openclaw-ops by @cathrynlavery |
 
 ---

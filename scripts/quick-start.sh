@@ -3,10 +3,10 @@
 # Guía interactiva 0 → 100%
 # Versión: 1.0 | Abril 2026
 #
-# Creado por: Friday Assistant (@Fridayassis_bot)
+# Creado por: Friday Assistant
 # Para: @azazelpy (R N)
 # Fecha: 2026-04-02
-# Grupo: AI multiverse (Telegram)
+# Grupo: AI multiverse
 
 set -eu  # Salir en error y variables no definidas
 
