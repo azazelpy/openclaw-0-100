@@ -14,15 +14,15 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-# Emojis
-✅="✅"
-❌="❌"
-⚠️="⚠️"
-📦="📦"
-🔧="🔧"
-🔐="🔐"
-📡="📡"
-🧠="🧠"
+# Emojis (usando nombres alternativos)
+EMOJI_OK="[OK]"
+EMOJI_ERR="[ERR]"
+EMOJI_WARN="[!]"
+EMOJI_PKG="[PKG]"
+EMOJI_FIX="[FIX]"
+EMOJI_SEC="[SEC]"
+EMOJI_NET="[NET]"
+EMOJI_BRAIN="[AI]"
 
 # Funciones de utilidad
 print_header() {
@@ -36,15 +36,15 @@ print_step() {
 }
 
 print_success() {
-    echo -e "${GREEN}${✅} $1${NC}"
+    echo -e "${GREEN}${EMOJI_OK} $1${NC}"
 }
 
 print_error() {
-    echo -e "${RED}${❌} $1${NC}"
+    echo -e "${RED}${EMOJI_ERR} $1${NC}"
 }
 
 print_warning() {
-    echo -e "${YELLOW}${⚠️} $1${NC}"
+    echo -e "${YELLOW}${EMOJI_WARN} $1${NC}"
 }
 
 check_command() {
@@ -61,7 +61,7 @@ pause() {
 }
 
 # Banner inicial
-print_header "🦞 OpenClaw Quick-Start 0 → 100%"
+print_header "OpenClaw Quick-Start 0 -> 100% (🦞)"
 echo "Esta guía interactiva te va a llevar de 0 a 100% con OpenClaw."
 echo "Tiempo estimado: 15-20 minutos"
 echo ""
@@ -71,7 +71,7 @@ pause
 # ============================================================================
 # FASE 1: Verificación de Requisitos
 # ============================================================================
-print_header "📦 FASE 1: Verificación de Requisitos"
+print_header "FASE 1: Verificacion de Requisitos ${EMOJI_PKG}"
 
 print_step "Verificando Node.js..."
 if check_command node; then
@@ -123,7 +123,7 @@ pause
 # ============================================================================
 # FASE 2: Instalación de OpenClaw
 # ============================================================================
-print_header "📦 FASE 2: Instalación de OpenClaw"
+print_header "FASE 2: Instalacion de OpenClaw ${EMOJI_PKG}"
 
 print_step "Verificando si OpenClaw ya está instalado..."
 if check_command openclaw; then
@@ -150,7 +150,7 @@ pause
 # ============================================================================
 # FASE 3: Configuración Inicial
 # ============================================================================
-print_header "🔧 FASE 3: Configuración Inicial"
+print_header "FASE 3: Configuracion Inicial ${EMOJI_FIX}"
 
 print_step "Ejecutando asistente de onboarding..."
 echo "Esto va a configurar:"
@@ -172,7 +172,7 @@ pause
 # ============================================================================
 # FASE 4: Configuración de Modelos y APIs
 # ============================================================================
-print_header "🧠 FASE 4: Modelos y APIs"
+print_header "FASE 4: Modelos y APIs ${EMOJI_BRAIN}"
 
 print_step "Configuración de proveedores de IA..."
 echo ""
@@ -209,7 +209,7 @@ pause
 # ============================================================================
 # FASE 5: Instalación de Skills Esenciales
 # ============================================================================
-print_header "🔧 FASE 5: Skills Esenciales"
+print_header "FASE 5: Skills Esenciales ${EMOJI_FIX}"
 
 print_step "Skills recomendados para instalar:"
 echo ""
@@ -243,7 +243,7 @@ pause
 # ============================================================================
 # FASE 6: Configuración del Watchdog
 # ============================================================================
-print_header "📡 FASE 6: Watchdog (Monitoreo Continuo)"
+print_header "FASE 6: Watchdog (Monitoreo Continuo) ${EMOJI_NET}"
 
 print_step "El watchdog monitorea tu gateway cada 5 minutos y:"
 echo "  - Reinicia el gateway si está caído"
@@ -271,7 +271,7 @@ pause
 # ============================================================================
 # FASE 7: Security Scan
 # ============================================================================
-print_header "🔐 FASE 7: Security Scan"
+print_header "FASE 7: Security Scan ${EMOJI_SEC}"
 
 print_step "Ejecutando security scan..."
 if [[ -f ~/.openclaw/skills/openclaw-ops/scripts/security-scan.sh ]]; then
@@ -288,7 +288,7 @@ pause
 # ============================================================================
 # FASE 8: Verificación Final
 # ============================================================================
-print_header "✅ FASE 8: Verificación Final"
+print_header "FASE 8: Verificacion Final ${EMOJI_OK}"
 
 print_step "Estado del gateway..."
 openclaw gateway status 2>&1 | head -10 || print_warning "No se pudo obtener estado del gateway"
@@ -310,13 +310,13 @@ print_header "🎉 ¡Instalación Completada!"
 
 echo ""
 echo "Resumen de lo realizado:"
-echo "  ${✅} OpenClaw instalado y configurado"
-echo "  ${✅} Gateway daemon configurado"
-echo "  ${✅} Skills esenciales instalados (openclaw-ops, skill-vetter)"
+echo "  ${EMOJI_OK} OpenClaw instalado y configurado"
+echo "  ${EMOJI_OK} Gateway daemon configurado"
+echo "  ${EMOJI_OK} Skills esenciales instalados (openclaw-ops, skill-vetter)"
 if [[ "$(uname)" == "Darwin" && $INSTALL_WD =~ ^[Yy]$ ]]; then
-    echo "  ${✅} Watchdog instalado como LaunchAgent"
+    echo "  ${EMOJI_OK} Watchdog instalado como LaunchAgent"
 fi
-echo "  ${✅} Security scan ejecutado"
+echo "  ${EMOJI_OK} Security scan ejecutado"
 echo ""
 echo "Próximos pasos recomendados:"
 echo "  1. Configurá tus APIs en ~/.openclaw/openclaw.json"
@@ -335,5 +335,5 @@ echo "  Docs: https://docs.openclaw.ai"
 echo "  Discord: https://discord.com/invite/clawd"
 echo "  GitHub: https://github.com/openclaw/openclaw"
 echo ""
-print_success "¡Bienvenido a OpenClaw! 🦞"
+print_success "Bienvenido a OpenClaw! (🦞)"
 echo ""
